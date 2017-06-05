@@ -12,10 +12,10 @@ public class Post {
 	private String shortDesc;
 	private String longDesc;
 	private Date dateCreated;
-	List<Modification> modifications = new ArrayList<Modification>();
-	
-	public Post(){}
 
+	public Post(){}
+	
+	
 	public Post(int postId, String creatorId, String title, String shortDesc, String longDesc, Date dateCreated) {
 		super();
 		this.postId = postId;
@@ -25,6 +25,7 @@ public class Post {
 		this.longDesc = longDesc;
 		this.dateCreated = dateCreated;
 	}
+
 
 	public int getPostId() {
 		return postId;
@@ -73,6 +74,9 @@ public class Post {
 	public void setDateCreated(Date dateCreated) {
 		this.dateCreated = dateCreated;
 	}
+
+
+
 	
 	
 

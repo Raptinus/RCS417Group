@@ -1,4 +1,3 @@
-// bla
 package edu.edgewood.model;
 
 import java.util.Date;
