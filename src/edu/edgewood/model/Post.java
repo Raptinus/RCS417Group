@@ -10,6 +10,7 @@ public class Post {
 	private String shortDesc;
 	private String longDesc;
 	private Date dateCreated;
+	List<Modification> modifications = new ArrayList<Modification>();
 	
 	public Post(){}
 
