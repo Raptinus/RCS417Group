@@ -22,7 +22,7 @@ public class PostJdbcDAO extends BaseJdbcDAO implements PostDAO {
 	}
 
 	@Override
-	public boolean insert(Post t) {
+	public boolean insert(Post post) {
 
 		return false;
 	}
@@ -32,7 +32,7 @@ public class PostJdbcDAO extends BaseJdbcDAO implements PostDAO {
 		Connection conn = null;
 		Statement stmt = null;
 		ResultSet rs = null;
-
+		System.out.println("hi");
 		List<Post> result = new ArrayList<>();
 
 		try {
@@ -42,7 +42,6 @@ public class PostJdbcDAO extends BaseJdbcDAO implements PostDAO {
 
 			while (rs.next()) {
 				Post post = create(rs);
-				System.out.println(post);
 				result.add(post);
 			}
 

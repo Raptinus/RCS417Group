@@ -25,13 +25,12 @@ public class IndexServlet extends HttpServlet {
 
     @Override
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		// get all posts and forward to index.jsp
+		// get all posts and forward to jsp
 		
 		List<Post> posts = service.getAll();
-		
 		request.setAttribute("postList", posts);
 		
-		request.getRequestDispatcher("WEB-INF/jsp/main.jsp").forward(request, response);
+		request.getRequestDispatcher("WEB-INF/jsp/index.jsp").forward(request, response);
 	}
 
 
