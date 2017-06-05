@@ -31,7 +31,7 @@
 		<%= post.getShortDesc()%> <br />
 		<!--  need to implement a method of posting info -->
 		<form id="viewpost" action="viewpost" method="post">
-			<input type='hidden' id="postid" value="<%=post.getPostId() %>">
+			<input type='hidden' id="postId" name="postId" value="<%=post.getPostId() %>">
 			<input type='submit' value="View">
 		</form>
 	
