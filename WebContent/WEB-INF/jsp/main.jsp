@@ -23,15 +23,17 @@
 	<%
 		List<Post> posts = (List<Post>) request.getAttribute("postList");
 	
-		for (Post post: posts) {
+	  	if(posts != null) {
+			for (Post post: posts) {
 	%>
 	
-		${post.title} | created by ${post.creatorId} <br>
-		${post.shortDesc} <br>
+		<%= post.getTitle()%> | created by <%= post.getCreatorId()%>  <br>
+		<%= post.getShortDesc()%> <br>
 		
 	
 	<%
-		}
+			}
+	  	}
 	%>
 	
 </body>

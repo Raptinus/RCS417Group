@@ -1,4 +1,4 @@
-<%@ page import="edu.edgewood.site.*"%>
+<%@ page import="edu.edgewood.model.*"%>
 
 <div>Y-Enterprises Review Site</div>
 <hr/>
@@ -10,22 +10,15 @@
 		if(loginUser == null){
 	%>
 		| <a href = "login">Login</a>
-		| <a href = "view">View Posts</a>
 	<% } else { %>
 	
-		| <a href = "logout"> Logout</a>
-		| <a href = "edit">Edit Posts</a>
-	<%
-		if (loginUser.isAdmin()){
-	
-	%>
-		| <a href = "userlist">User Listing</a>
-		| <a href = "adduser">Add User</a>
-		
+		<%= loginUser.getUserId() %> | <a href = "logout">Logout</a>
 	<% 
-		}
+	
 	}
 	%>
+	
+	<hr/>
 	
 
 		
