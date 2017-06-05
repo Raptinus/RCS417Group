@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: localhost
--- Generation Time: Jun 05, 2017 at 06:59 PM
+-- Generation Time: Jun 05, 2017 at 10:22 PM
 -- Server version: 5.6.25
 -- PHP Version: 5.3.29
 
@@ -48,14 +48,15 @@ CREATE TABLE IF NOT EXISTS `post` (
   `title` varchar(20) NOT NULL,
   `shortDesc` varchar(50) NOT NULL,
   `longDesc` varchar(2000) NOT NULL
-) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8;
 
 --
 -- Dumping data for table `post`
 --
 
 INSERT INTO `post` (`postId`, `creatorId`, `dateCreated`, `title`, `shortDesc`, `longDesc`) VALUES
-(1, 'fidel', '2017-06-04', 'History Will Absolve', 'Ending of a speech made by Fidel Castro on 16 Octo', 'But I do not fear prison, as I do not fear the fury of the miserable tyrant who took the lives of 70 of my comrades. Condemn me. It does not matter. History will absolve me.');
+(1, 'fidel', '2017-06-04', 'History Will Absolve', 'Ending of a speech made by Fidel Castro on 16 Octo', 'But I do not fear prison, as I do not fear the fury of the miserable tyrant who took the lives of 70 of my comrades. Condemn me. It does not matter. History will absolve me.'),
+(2, 'fidel', '2017-06-04', 'Hello Comrades', 'A short note to my friends', 'I told you it was a short note');
 
 -- --------------------------------------------------------
 
@@ -108,7 +109,7 @@ ALTER TABLE `user`
 -- AUTO_INCREMENT for table `post`
 --
 ALTER TABLE `post`
-  MODIFY `postId` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=2;
+  MODIFY `postId` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=3;
 --
 -- Constraints for dumped tables
 --
