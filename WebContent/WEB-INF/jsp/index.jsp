@@ -30,7 +30,8 @@
 		<%= post.getTitle()%> | created by <%= post.getCreatorId()%>  <br />
 		<%= post.getShortDesc()%> <br />
 		<!--  need to implement a method of posting info -->
-		<form id="<%=post.getPostId() %>" action="viewpost" method="post">
+		<form id="viewpost" action="viewpost" method="post">
+			<input type='hidden' id="postid" value="<%=post.getPostId() %>">
 			<input type='submit' value="View">
 		</form>
 	
