@@ -4,9 +4,8 @@
 	</head>	
 	<body>
 		<%@ include file = "include/menu.jsp" %>
-		<p/>
-		${errormsg}
-		<p/>
+
+	${errmsg} <p />
 	<form action='login' method='post'>
 		User Name: <input type = 'text' name = 'id' value = '' /><br/>
 		Password: <input type = 'password' name = 'pwd' value = '' /><br/>
