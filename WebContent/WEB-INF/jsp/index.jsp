@@ -13,7 +13,8 @@
 <body>
 
 	<%@ include file="include/menu.jsp" %>
-	<!--  need to implement a test for session cookie of logged-in user -->
+	<!--  need to implement a test for session cookie of logged-in user 
+		  if user is logged in, implement new post, edit, delete buttons-->
 	<p />
 	
 	${errmsg}
