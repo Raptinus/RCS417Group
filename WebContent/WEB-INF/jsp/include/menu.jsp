@@ -12,7 +12,7 @@
 		| <a href = "login">Login</a>
 	<% } else { %>
 	
-		<%= loginUser.getUserId() %> | <a href = "newpost.jsp">New Post</a> | <a href = "logout">Logout</a>
+		 | <a href = "newpost.jsp">New Post</a> | <a href = "logout">Logout</a> | Logged in as <%= loginUser.getUserId() %>
 	<% 
 	
 	}
