@@ -1,0 +1,129 @@
+@CHARSET "ISO-8859-1";
+
+/* Reference:
+   Background: Grain: #D7CEC7
+   Text: Blackboard: #565656
+   Title: OxBlood: #76323F
+   Body Background: Tan: #C09F80 
+*/
+
+body {
+  margin: 0;
+  padding: 0;
+  background: #D7CEC7;
+  font-family: 'Raleway', sans-serif;
+  overflow-x: hidden;
+  color: #565656;
+}
+
+.underline {text-decoration: underline;}
+
+.capital {font-variant: small-caps;}
+
+.heading {font-family: 'Oswald', sans-serif;}
+
+.bodybackground {background-color: #C09f80;}
+
+.title {color: #76323F;}
+
+ul {
+    font-family: 'Oswald', sans-serif;
+	font-size: 1.2em;
+	list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-color: #333;
+}
+
+li {
+    float: left;
+}
+
+li a {
+    display: block;
+    color: white;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+}
+
+li b{
+	
+	font-style: italic;
+	display: block;
+    color: white;
+    text-align: right;
+    padding: 14px 16px;
+    text-decoration: none;
+	
+}
+
+li a:hover {
+    background-color: #111;
+}
+ 
+.nav ul {
+  list-style: none;
+  background-color: #444;
+  text-align: center;
+  padding: 0;
+  margin: 0;
+}
+.nav li {
+  font-family: 'Oswald', sans-serif;
+  font-size: 1.2em;
+  line-height: 40px;
+  height: 40px;
+  border-bottom: 1px solid #888;
+}
+ 
+.nav a {
+  text-decoration: none;
+  color: #fff;
+  display: block;
+  transition: .3s background-color;
+}
+ 
+.nav a:hover {
+  background-color: #005f5f;
+}
+ 
+.nav a.active {
+  background-color: #fff;
+  color: #444;
+  cursor: default;
+}
+
+textarea {
+	
+	width: 100%;
+    height: 150px;
+    padding: 12px 20px;
+    box-sizing: border-box;
+    border: 2px solid #ccc;
+    border-radius: 4px;
+    background-color: #f8f8f8;
+    font-size: 16px;
+    resize: none;
+	
+}
+
+div.a {
+	
+        padding:3px;
+	margin-left: auto;
+	margin-right: auto;
+	width: 1100 px;
+        
+}
+
+
+div.z{
+        background-color: #C09f80; 
+	padding: 3px;
+	margin-left: auto;
+	margin-right: auto;
+	width: 600px;
+	
+}
