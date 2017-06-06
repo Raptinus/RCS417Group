@@ -39,7 +39,7 @@ public class LoginServlet extends HttpServlet {
 		if (user != null) {
 			HttpSession session = request.getSession(true);
 			session.setAttribute("loginUser", user);
-			request.getRequestDispatcher("WEB-INF/jsp/index.jsp").forward(request, response);
+			request.getRequestDispatcher("/index").forward(request, response);
 			
 		} else {
 			request.setAttribute("errmsg", "User not found.");

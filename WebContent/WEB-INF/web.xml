@@ -4,9 +4,8 @@
   <servlet>
     <servlet-name>index</servlet-name>
     <servlet-class>edu.edgewood.servlet.IndexServlet</servlet-class>
-    
-</servlet>
-<servlet>
+  </servlet>
+  <servlet>
     <servlet-name>login</servlet-name>
     <servlet-class>edu.edgewood.servlet.LoginServlet</servlet-class>
   </servlet>
