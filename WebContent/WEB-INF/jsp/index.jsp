@@ -32,13 +32,26 @@
 			<input type='hidden' id="postId" name="postId" value="<%=post.getPostId() %>">
 			<input type='submit' value="View">
 		</form>
-	
+	<%
+		if(loginUser != null){
 		
+	%>
+	
+		<form id="editpost" action="editpost" method="post">
+			<input type='hidden' id="postId" name="postId" value="<%=post.getPostId() %>">
+			<input type='submit' value="Edit">
+		</form>
+		
+		<form id="deletepost" action="deletepost" method="post">
+			<input type='hidden' id="postId" name="postId" value="<%=post.getPostId() %>">
+			<input type='submit' value="Delete">
+		</form>
+
 		
 		<p />
 		
-	
 	<%
+			}
 			}
 	  	}
 	%>
