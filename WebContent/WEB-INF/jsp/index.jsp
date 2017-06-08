@@ -16,10 +16,13 @@
 	<!--  need to implement a test for session cookie of logged-in user 
 		  if user is logged in, implement new post, edit, delete buttons-->
 	<p />
+	${errmsg}	
 	<p />
 	
 	<%
 		List<Post> posts = (List<Post>) request.getAttribute("postList");
+			
+		
 	
 	  	if(posts != null) {
 			for (Post post: posts) {

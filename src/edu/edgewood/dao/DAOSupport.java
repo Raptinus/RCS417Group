@@ -8,5 +8,6 @@ public interface DAOSupport<T> {
 	boolean insert (T t);
 	List<T> getAll();
 	boolean update(T t);
+	boolean delete(String id);
 
 }

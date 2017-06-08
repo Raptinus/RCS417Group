@@ -17,4 +17,8 @@ public class PostService {
 		return dao.getAll();
 	}
 
+	public boolean deletePost(String id) {	
+		return dao.delete(id);
+	}
+
 }

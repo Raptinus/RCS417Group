@@ -1,6 +1,7 @@
 package edu.edgewood.dao.jdbc;
 
 import java.sql.Connection;
+import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
@@ -14,6 +15,8 @@ import edu.edgewood.model.Post;
 public class PostJdbcDAO extends BaseJdbcDAO implements PostDAO {
 
 	private static final String SELECT_ALL = "select * from post";
+	
+	private static final String DEL_SQL = "delete from post where postId = ?";
 
 	@Override
 	public Post get(String id) {
@@ -32,7 +35,7 @@ public class PostJdbcDAO extends BaseJdbcDAO implements PostDAO {
 		Connection conn = null;
 		Statement stmt = null;
 		ResultSet rs = null;
-		System.out.println("hi");
+
 		List<Post> result = new ArrayList<>();
 
 		try {
@@ -77,6 +80,28 @@ public class PostJdbcDAO extends BaseJdbcDAO implements PostDAO {
 		Date dateCreated = (Date) rs.getDate("dateCreated");
 
 		return new Post(postId, creatorId, title, shortDesc, longDesc, dateCreated);
+	}
+	
+	public boolean delete(String id) {
+		Connection conn = null;
+		PreparedStatement stmt = null;
+		
+		try {
+			conn = getConnection();
+			stmt = conn.prepareStatement(DEL_SQL);
+			stmt.setString(1,  id);
+			
+			int result = stmt.executeUpdate();
+			return result == 1;
+			
+		} catch (Exception ex) {
+			ex.printStackTrace();
+			return false;
+		} finally {
+			releaseResources(conn, stmt, null);
+		}
+
+		
 	}
 
 }

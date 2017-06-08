@@ -33,4 +33,10 @@ public class ModificationJdbcDAO extends BaseJdbcDAO implements ModificationDAO{
 		return false;
 	}
 
+	@Override
+	public boolean delete(String id) {
+		// TODO Auto-generated method stub
+		return false;
+	}
+
 }

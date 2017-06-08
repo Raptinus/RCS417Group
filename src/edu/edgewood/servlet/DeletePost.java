@@ -29,8 +29,22 @@ public class DeletePost extends HttpServlet {
 
 
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		// TODO Auto-generated method stub
-		doGet(request, response);
+		String id = request.getParameter("postId");
+		
+		boolean success = service.deletePost(id);
+		
+		String message;
+		
+		if (success) {
+			message = "Post deleted.";
+		} else {
+			message = "Unable to delete post.";
+		}
+		
+		request.setAttribute("errmsg", message);
+		
+		request.getRequestDispatcher("/index").forward(request, response);
+
 	}
 
 }

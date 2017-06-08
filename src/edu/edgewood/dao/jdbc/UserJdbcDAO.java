@@ -182,5 +182,11 @@ public class UserJdbcDAO extends BaseJdbcDAO implements UserDAO {
 		return new User(id, pwd, firstName, lastName, dateRegistered);
 	}
 
+	@Override
+	public boolean delete(String id) {
+		// TODO Auto-generated method stub
+		return false;
+	}
+
 
 }
