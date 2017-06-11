@@ -4,7 +4,6 @@ import java.io.IOException;
 import java.text.DateFormat;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
-import java.time.LocalDate;
 import java.util.Date;
 
 import javax.servlet.ServletException;
@@ -13,7 +12,9 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import edu.edgewood.model.Modification;
 import edu.edgewood.model.Post;
+import edu.edgewood.svc.ModificationService;
 import edu.edgewood.svc.PostService;
 
 
@@ -22,9 +23,11 @@ public class EditPostServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
 	PostService service;
+	ModificationService modService;
 	
 	public EditPostServlet() {
 		service = new PostService();
+		modService =  new ModificationService();
     }
 
 
@@ -63,11 +66,14 @@ public class EditPostServlet extends HttpServlet {
 		
 		Post post = new Post(id, creatorId, title, shortDesc, longDesc, dateCreated);
 		
-		boolean success = service.updatePost(post);
+		Modification mod = new Modification(id, creatorId, dateCreated);
+		
+		boolean postUpdated = service.updatePost(post);
+		boolean modificationLogged = modService.insert(mod);
 		
 		String message;
 		
-		if (success) {
+		if (postUpdated && modificationLogged) {
 			message = "Post updated.";
 		} else {
 			message = "Unable to update with the following information.";
