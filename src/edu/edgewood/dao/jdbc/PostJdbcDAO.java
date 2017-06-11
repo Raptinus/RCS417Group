@@ -17,17 +17,71 @@ public class PostJdbcDAO extends BaseJdbcDAO implements PostDAO {
 	private static final String SELECT_ALL = "select * from post";
 	
 	private static final String DEL_SQL = "delete from post where postId = ?";
+	
+	private static final String SELECT_BY_ID = "select * from post where postId = ?";
+	
+	private static final String UPDATE_SQL = "update post set title = ?, shortDesc = ?, longDesc = ? where postId = ?";
+	
+	private static final String INSERT_SQL = "insert into post(creatorId, title, shortDesc, longDesc, dateCreated) "
+			+ " values(?, ?, ?, ?, ?)";
 
 	@Override
 	public Post get(String id) {
-		// TODO Auto-generated method stub
-		return null;
+		Connection conn = null;
+		PreparedStatement stmt = null;
+		ResultSet rs = null;
+		
+		Post post = null;
+
+
+		try {
+			conn = getConnection();
+			stmt = conn.prepareStatement(SELECT_BY_ID);
+			stmt.setString(1,  id);
+			rs = stmt.executeQuery();
+
+			while (rs.next()) {
+				post = create(rs);
+			}
+
+			return post;
+
+		} catch (Exception ex) {
+			ex.printStackTrace();
+			return post;
+		} finally {
+			releaseResources(conn, stmt, rs);
+		}
 	}
 
 	@Override
 	public boolean insert(Post post) {
+		Connection conn = null;
+		PreparedStatement stmt = null;
+		ResultSet rs = null;
+		
+		java.sql.Date sqlDate = new java.sql.Date(post.getDateCreated().getTime());
+		try {
+			conn = getConnection();
+			stmt = conn.prepareStatement(INSERT_SQL);
+			stmt.setString(1,  post.getCreatorId());
+			stmt.setString(2, post.getTitle());
+			stmt.setString(3,  post.getShortDesc());
+			stmt.setString(4,  post.getLongDesc());
+			stmt.setDate(5,  sqlDate);
+			
+			int count = stmt.executeUpdate();
+			
+			return count == 1;
+		} catch (Exception ex) {
+			ex.printStackTrace();
+			return false;
+		} finally {
+			releaseResources(conn, stmt, rs);
+		}
+	
+	
 
-		return false;
 	}
 
 	@Override
@@ -58,17 +112,7 @@ public class PostJdbcDAO extends BaseJdbcDAO implements PostDAO {
 		}
 	}
 
-	@Override
-	public boolean update(Post t) {
-		// TODO Auto-generated method stub
-		return false;
-	}
-
-	@Override
-	public Post get(String id, String pwd) throws SQLException {
-		// TODO Auto-generated method stub
-		return null;
-	}
+	
 
 	private Post create(ResultSet rs) throws SQLException {
 		
@@ -101,6 +145,32 @@ public class PostJdbcDAO extends BaseJdbcDAO implements PostDAO {
 			releaseResources(conn, stmt, null);
 		}
 
+		
+	}
+
+	@Override
+	public boolean update(Post post) {
+
+		Connection conn = null;
+		PreparedStatement stmt = null;
+		
+		try {
+			conn = getConnection();
+			stmt = conn.prepareStatement(UPDATE_SQL);
+			stmt.setString(1,  post.getTitle());
+			stmt.setString(2,  post.getShortDesc());
+			stmt.setString(3,  post.getLongDesc());
+			stmt.setInt(4,  post.getPostId());
+			
+			int result = stmt.executeUpdate();
+			return result == 1;
+			
+		} catch (Exception ex) {
+			ex.printStackTrace();
+			return false;
+		} finally {
+			releaseResources(conn, stmt, null);
+		}
 		
 	}
 

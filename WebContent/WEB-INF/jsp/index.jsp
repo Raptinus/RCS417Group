@@ -40,7 +40,7 @@
 		
 	%>
 	
-		<form id="editpost" action="editpost" method="post">
+		<form id="editpost" action="editpost" method="get">
 			<input type='hidden' id="postId" name="postId" value="<%=post.getPostId() %>">
 			<input type='submit' value="Edit">
 		</form>

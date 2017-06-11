@@ -21,4 +21,17 @@ public class PostService {
 		return dao.delete(id);
 	}
 
+	public Post getPost(String id) {
+		return dao.get(id);
+	}
+
+	public boolean updatePost(Post post) {
+		return dao.update(post);
+	}
+
+	public boolean insert(Post post) {
+		return dao.insert(post);
+		
+	}
+
 }

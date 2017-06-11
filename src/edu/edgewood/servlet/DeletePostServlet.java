@@ -12,13 +12,13 @@ import edu.edgewood.svc.PostService;
 
 
 @WebServlet(name = "deletepost", urlPatterns = { "/deletepost" })
-public class DeletePost extends HttpServlet {
+public class DeletePostServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 	
 	PostService service;
        
 
-    public DeletePost() {
+    public DeletePostServlet() {
         service = new PostService();
     }
 

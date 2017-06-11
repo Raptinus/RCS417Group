@@ -4,14 +4,20 @@
 	</head>	
 	<body>
 		<%@ include file = "include/menu.jsp" %>
-			
-		<textarea rows="10" cols="200" readonly>
 		
-		<!-- Insert code linking to database to display text from previously selected file -->
+		${errmsg}
+		<p />
 		
-		</textarea>
-			
-			
+		
+		${post.title} | created by ${post.creatorId} on ${post.dateCreated}
+		<p />
+		
+		${post.shortDesc}
+		
+		<p />
+		
+		${post.longDesc}
+		
 			
 	</body>
 </html>
