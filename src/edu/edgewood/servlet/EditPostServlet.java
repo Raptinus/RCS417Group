@@ -39,8 +39,6 @@ public class EditPostServlet extends HttpServlet {
 		
 		request.setAttribute("post", post);
 		
-		System.out.println(post.getPostId() + " doget");
-		
 		request.getRequestDispatcher("/WEB-INF/jsp/editpost.jsp").forward(request, response);
 	}
 
@@ -52,7 +50,6 @@ public class EditPostServlet extends HttpServlet {
 		String title = request.getParameter("title");
 		String shortDesc = request.getParameter("shortdesc");
 		String longDesc = request.getParameter("longdesc");
-		System.out.println(date + " do post");
 		
 		Date dateCreated = null;
 		
