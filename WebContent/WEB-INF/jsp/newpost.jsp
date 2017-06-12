@@ -15,15 +15,15 @@
 		
 		
 		Title:<br />
-		<input type="text" name="title" value="">
+		<input type="text" name="title" value="" pattern = "[a-zA-Z0-9]+" required>
 		
 		<p />
 		Short Description:<br />
-		<input type="text" name="shortdesc" value="">		
+		<input type="text" name="shortdesc" value="" required>		
 		<p />
 		
 		Detailed Description:<br />
-		<textarea rows="10" cols="45" name="longdesc"></textarea>
+		<textarea rows="10" cols="45" name="longdesc" required></textarea>
 		<p />
 		<input type="submit" value="Submit">
 

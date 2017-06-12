@@ -31,6 +31,7 @@
 		<%= post.getTitle()%> | created by <%= post.getCreatorId()%>  <br />
 		<%= post.getShortDesc()%> <br />
 		<!--  need to implement a method of posting info -->
+		
 		<form id="viewpost" action="viewpost" method="post">
 			<input type='hidden' id="postId" name="postId" value="<%=post.getPostId() %>">
 			<input type='submit' value="View">
@@ -45,9 +46,9 @@
 			<input type='submit' value="Edit">
 		</form>
 		
-		<form id="deletepost" action="deletepost" method="post">
+		<form id="deletepost" action="deletepost" method="post" onsubmit="return confirm('Do you really want to delete this post?');">
 			<input type='hidden' id="postId" name="postId" value="<%=post.getPostId() %>">
-			<input type='submit' value="Delete">
+			<input type='submit' value="Delete" onClick="confirmationDelete()">
 		</form>
 
 		

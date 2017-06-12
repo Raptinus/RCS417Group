@@ -17,15 +17,15 @@
 		
 		
 		Title:<br />
-		<input type="text" name="title" value="<%=post.getTitle()%>">
+		<input type="text" name="title" value="<%=post.getTitle()%>" pattern = "[a-zA-Z0-9]+" required>
 		
 		<p />
 		Short Description:<br />
-		<input type="text" name="shortdesc" value="<%=post.getShortDesc()%>">		
+		<input type="text" name="shortdesc" value="<%=post.getShortDesc()%>" pattern = "[a-zA-Z0-9]+" required>		
 		<p />
 		
 		Detailed Description:<br />
-		<textarea rows="10" cols="45" name="longdesc">${post.longDesc}</textarea>
+		<textarea rows="10" cols="45" name="longdesc" required>${post.longDesc}</textarea>
 		<p />
 		<input type="submit" value="Submit">
 
