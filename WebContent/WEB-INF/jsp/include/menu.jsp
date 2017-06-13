@@ -1,8 +1,8 @@
 <%@ page import="edu.edgewood.model.*"%>
 
-<div>Y-Enterprises Review Site</div>
+<div class="heading">Y-Enterprises Review Site</div>
 <hr/>
-<div>
+<div class="nav">
 <a href="<%=request.getContextPath()%>">Home</a>
 	
 	<%
