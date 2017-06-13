@@ -12,10 +12,8 @@
 		<input type="hidden" name="creatorid" value="<%=loginUser.getUserId()%>">
 				<p />
 		
-		
-		
 		Title:<br />
-		<input type="text" name="title" value="" pattern = "[a-zA-Z0-9]+" required>
+		<input type="text" name="title" value="" pattern = "[a-zA-Z0-9\s]+" required>
 		
 		<p />
 		Short Description:<br />

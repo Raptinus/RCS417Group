@@ -17,11 +17,11 @@
 		
 		
 		Title:<br />
-		<input type="text" name="title" value="<%=post.getTitle()%>" pattern = "[a-zA-Z0-9]+" required>
+		<input type="text" name="title" value="<%=post.getTitle()%>" pattern = "[a-zA-Z0-9\s]+" required>
 		
 		<p />
 		Short Description:<br />
-		<input type="text" name="shortdesc" value="<%=post.getShortDesc()%>" pattern = "[a-zA-Z0-9]+" required>		
+		<input type="text" name="shortdesc" value="<%=post.getShortDesc()%>" required>		
 		<p />
 		
 		Detailed Description:<br />

@@ -3,7 +3,6 @@ package edu.edgewood.model;
 import java.util.Date;
 
 // Bean for modifications
-
 public class Modification {
 	
 	private int postId;
@@ -41,10 +40,6 @@ public class Modification {
 	public void setDateModified(Date dateModified) {
 		this.dateModified = dateModified;
 	}
-	
-	
-	
-	
 	
 
 }
