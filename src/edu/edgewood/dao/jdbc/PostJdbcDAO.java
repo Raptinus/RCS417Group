@@ -12,6 +12,7 @@ import java.util.List;
 import edu.edgewood.dao.PostDAO;
 import edu.edgewood.model.Post;
 
+// manages db changes for posts
 public class PostJdbcDAO extends BaseJdbcDAO implements PostDAO {
 
 	private static final String SELECT_ALL = "select * from post";

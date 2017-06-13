@@ -2,6 +2,7 @@ package edu.edgewood.dao;
 
 import java.util.List;
 
+// basic functions DAOs might support
 public interface DAOSupport<T> {
 	
 	T get (String id);

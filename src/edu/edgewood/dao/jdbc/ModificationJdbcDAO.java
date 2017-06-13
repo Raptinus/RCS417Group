@@ -8,6 +8,7 @@ import java.util.List;
 import edu.edgewood.dao.ModificationDAO;
 import edu.edgewood.model.Modification;
 
+// manages db changes to modification table (edits, ie)
 public class ModificationJdbcDAO extends BaseJdbcDAO implements ModificationDAO{
 	
 	private static final String INSERT_SQL = "insert into modification(postId, modifierId, dateModified) "

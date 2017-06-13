@@ -29,8 +29,10 @@ public class DeletePostServlet extends HttpServlet {
 
 
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		// pull data from front-end
 		String id = request.getParameter("postId");
 		
+		// attempt to delete post
 		boolean success = service.deletePost(id);
 		
 		String message;
@@ -41,6 +43,7 @@ public class DeletePostServlet extends HttpServlet {
 			message = "Unable to delete post.";
 		}
 		
+		//depending on success, redirect to index servlet with message
 		request.setAttribute("errmsg", message);
 		
 		request.getRequestDispatcher("/index").forward(request, response);

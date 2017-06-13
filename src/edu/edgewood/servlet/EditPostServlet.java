@@ -33,17 +33,23 @@ public class EditPostServlet extends HttpServlet {
 
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		
+		// pulls postId from hidden input tag in front-end	
 		String id = request.getParameter("postId");
 		
+		// fetches post from db
 		Post post = service.getPost(id);
 		
+		// attaches post in question to the request
 		request.setAttribute("post", post);
 		
+		// forward to jsp
 		request.getRequestDispatcher("/WEB-INF/jsp/editpost.jsp").forward(request, response);
 	}
 
 
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		
+		// pulls post data from front-end
 		int id = Integer.parseInt(request.getParameter("id"));
 		String creatorId = request.getParameter("creatorid");
 		String date = request.getParameter("datecreated");
@@ -53,6 +59,7 @@ public class EditPostServlet extends HttpServlet {
 		
 		Date dateCreated = null;
 		
+		//irritating way of parsing a string date as stored in an html tag to Date object
 		DateFormat formatter = new SimpleDateFormat("yyyy-mm-dd");
 		try {
 		  dateCreated = formatter.parse(date);
@@ -65,11 +72,14 @@ public class EditPostServlet extends HttpServlet {
 		
 		Modification mod = new Modification(id, creatorId, dateCreated);
 		
+		// upon edit we need to both update the post and store the date and user of the edit
 		boolean postUpdated = service.updatePost(post);
 		boolean modificationLogged = modService.insert(mod);
 		
 		String message;
 		
+		// if the updates succeed, we view the post with a success message--
+		// otherwise we view the post with an error message
 		if (postUpdated && modificationLogged) {
 			message = "Post updated.";
 		} else {

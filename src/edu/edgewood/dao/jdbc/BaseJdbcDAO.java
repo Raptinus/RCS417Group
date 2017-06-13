@@ -1,9 +1,13 @@
 package edu.edgewood.dao.jdbc;
 
 import java.sql.Connection;
+
+
 import java.sql.DriverManager;
 import java.sql.Statement;
 import java.sql.ResultSet;
+
+// abstract class defining database connection methods for all inheritors
 
 public abstract class BaseJdbcDAO {
 	private static final String DRIVER_NAME = "com.mysql.jdbc.Driver";

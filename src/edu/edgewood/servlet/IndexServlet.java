@@ -25,18 +25,16 @@ public class IndexServlet extends HttpServlet {
 
     @Override
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		// get all posts and forward to jsp
+		// get all posts and forward to jsp, which will be populated with existing posts
 		
 		List<Post> posts = service.getAll();
 		request.setAttribute("postList", posts);
 		
 		request.getRequestDispatcher("WEB-INF/jsp/index.jsp").forward(request, response);
 	}
-
-
-	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		// TODO Auto-generated method stub
-		doGet(request, response);
-	}
+    
+    protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+    	doGet(request, response);
+    }
 
 }

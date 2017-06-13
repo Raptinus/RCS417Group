@@ -24,6 +24,11 @@ public class ViewPostServlet extends HttpServlet {
 
 	
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+
+	}
+
+
+	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		
 		String id = request.getParameter("postId");
 		
@@ -33,12 +38,6 @@ public class ViewPostServlet extends HttpServlet {
 		
 		request.getRequestDispatcher("/WEB-INF/jsp/viewpost.jsp").forward(request, response);
 
-	}
-
-
-	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		// TODO Auto-generated method stub
-		doGet(request, response);
 	}
 
 }

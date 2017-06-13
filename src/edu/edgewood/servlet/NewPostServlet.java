@@ -36,16 +36,19 @@ public class NewPostServlet extends HttpServlet {
 
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		
+		// pulls parameters from front-end
 		String creatorId = request.getParameter("creatorid");
 		String title = request.getParameter("title");
 		String shortDesc = request.getParameter("shortdesc");
 		String longDesc = request.getParameter("longdesc");
 		
+		// date post is created (now!)
 		Date dateCreated = new Date();
 
-		//using zero here, we won't use this value, db will create its own auto increment
+		//using zero here for postId, we won't use this value, db will create its own via autoincrement
 		Post post = new Post(0, creatorId, title, shortDesc, longDesc, dateCreated);
 		
+		// attempt to insert post
 		boolean success = service.insert(post);
 		
 		
@@ -57,7 +60,7 @@ public class NewPostServlet extends HttpServlet {
 			message = "Unable to save the following information.";
 		}
 		
-		
+		// attach success/failure msg to request and return to view post
 		request.setAttribute("errmsg", message);
 		request.setAttribute("post", post);
 		

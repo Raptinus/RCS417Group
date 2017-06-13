@@ -10,6 +10,7 @@ import edu.edgewood.dao.jdbc.UserJdbcDAO;
 import edu.edgewood.model.Post;
 import edu.edgewood.model.User;
 
+//service class operating between the user dao and the servlet
 public class UserService {
 	
 	private UserDAO dao;

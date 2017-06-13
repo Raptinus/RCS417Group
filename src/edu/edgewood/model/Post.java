@@ -2,6 +2,7 @@ package edu.edgewood.model;
 
 import java.util.Date;
 
+// Bean for posts
 public class Post {
 	
 	private int postId;

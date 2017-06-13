@@ -20,6 +20,8 @@ public class LogoutServlet extends HttpServlet {
 
 
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		
+		// simply invalidates the session and returns control to the index
 		request.getSession().invalidate();
 		
 		request.getRequestDispatcher("/index").forward(request,  response);
@@ -27,13 +29,5 @@ public class LogoutServlet extends HttpServlet {
 		
 		
 	}
-
-	/**
-	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
-	 */
-	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		// TODO Auto-generated method stub
-		doGet(request, response);
-	}
-
 }
+

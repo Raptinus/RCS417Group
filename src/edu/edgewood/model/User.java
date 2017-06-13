@@ -12,9 +12,7 @@ public class User {
 	private Date dateRegistered;
 	
 	
-	public User(){
-		
-	}
+	public User(){}
 
 
 	public User(String userId, String firstName, String lastName, String pwd, Date dateRegistered) {
